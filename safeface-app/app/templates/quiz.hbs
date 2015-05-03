@@ -1,21 +1,12 @@
-<script type="text/javascript">
+<div class="container imageGet">
+<script src="/js/webcam.js"></script>
+	<script src="/js/FACE-1.0.js"></script>
+	<script src="/js/gallery.js"></script>
 
-	function JSONPHandler(data) {
-		var imageSet = data.images;
-		var lenImage = imageSet.length;
-		console.log(lenImage);
-		for (var i = 0; i &lt; lenImage; i++) {
-			(function(i) {
-				setTimeout(function() {
-					document.write('{ imgId: "' + i + '", imgSrc: "' + imageSet[i] + '", ethnicity: "Asian" }');
-				}, i * 500);
-			})(i);
-		}
-	}
-
-</script>
-
-<div class="container imageGet"></div>
-
-<script src="http://localhost:3000/?callback=JSONPHandler">
-</script>
+	<div id="slideshow-container">
+	<div id="my_camera" style="width:320px; height:240px;visibility:hidden;"></div>
+		<img id="slideshow" />
+	</div>
+	<div id="result_images"></div>
+	<div id="observations"></div>
+</div>
